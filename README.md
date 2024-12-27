@@ -18,7 +18,7 @@ Isi disini
 2. Download Seluruh file **trdash** di repository github ini
 3. Ekstrak folder **trdash** yang sudah di download dari repository dan pindahkan ke folder xampp/htdocs
 4. Download file apache core zip di [link](https://tomcat.apache.org/download-90.cgi)
-5. Ekstrak folder apache di penyimpanan /:D
+5. Ekstrak folder apache di penyimpanan D:\
 6. Akses folder **trdash** di htdocs dan copy folder mondrian
 7. Akses di folder apache yang sudah di download sebelumnya, masuk ke folder webapps dan paste folder mondrian
 8. Alses folder **trdash** di htdocs, masuk ke folder mondrian dan ambil file index.jsp dan index.html lalu copy
