@@ -1,1 +1,10 @@
-# Dashboard-Adventureworks
+### **`Dashboard Adventureworks`**
+
+---
+
+### **`Oleh`**
+
+- **Talia Aprianti**
+- **Risda Rahmawati Harsono**
+
+---
