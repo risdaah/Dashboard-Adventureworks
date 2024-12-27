@@ -4,8 +4,8 @@
 
 ### **`Oleh`**
 
-- **Talia Aprianti**
-- **Risda Rahmawati Harsono**
+- **Talia Aprianti          [22082010035]**
+- **Risda Rahmawati Harsono [22082010040]**
 
 ---
 ### **`Tampilan`**
