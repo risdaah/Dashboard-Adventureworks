@@ -26,8 +26,8 @@ Isi disini
 10. Akses folder **trdash** di htdocs, masuk ke folder mondrian dan ambil file schpurchasing.xml, schsales.xml, whpurchasing.jsp & whsales.jsp lalu copy
 11. Akses folder **apache/webapps/mondrian/WEB-INF/queries** dan paste
 12. Buka XAMPP Panel Control kemudian nyalakan 'apache' dan 'mysql'
-13. Akses (localhost/phpmyadmin) di browser kemudian buat database schsales, schpurchasing dan schaccount
+13. Akses [localhost/phpmyadmin](localhost/phpmyadmin) di browser kemudian buat database schsales, schpurchasing dan schaccount
 14. Buka database dan impor file sql yang ada di folder htdocs **trdash/database** dan impor schsales.sql, schpurchasing.sql, schaccount.sql sesuai dengan database yang sudah dibuat sebelumnya
-15. Akses folder apache lewat Command Prompt (CMD) dan jalankan catalina run [contoh akses di CMD: D:\apache-tomcat-9.0.97]
-16. Akses website dengan link (localhost/trdash)
+15. Akses folder apache lewat Command Prompt (CMD) dan jalankan catalina run **[contoh akses di CMD: D:\apache-tomcat-9.0.97]**
+16. Akses website dengan link [localhost/trdash](localhost/trdash)
 ---
