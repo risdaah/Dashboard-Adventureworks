@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* =============== Globals ============== */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #2677f4;
+    --blue2: #37a1e8;
+    --blue3: #4e8ff0;
+    --orange: #ff9d43;
+    --purple: #9866fe;
+    --green: #4dbfc0;
+    --yellow: #fac955;
+    --pink: #fe6283;    
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #f7f7f7;
+    min-width: 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .25s ease-in-out;
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+#sidebar.expand .sidebar-logo,
+#sidebar.expand a.sidebar-link span {
+    animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i,
+.dropdown-item i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: var(--blue3);
+    border-left: 3px solid var(--yellow);
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: var(--blue);
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.navbar {
+    background-color: #f5f5f5;
+    box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1);
+}
+
+.navbar-expand .navbar-collapse {
+    min-width: 200px;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+@media (min-width: 768px) {}
+
+
+/* ===================== Main ===================== */
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    font-weight: bolder;    
+    color: var(--blue);
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--blue);
+}
+
+.user img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    margin-left: 10px;
+}
+
+/* ======================= Cards ====================== */
+.cardBox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.card {
+    position: relative;
+    background: var(--white);
+    border-radius: 20px;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cardBox .card .cardContent {
+    display: flex;
+    flex-direction: column; 
+}
+
+.cardBox .card .numbers {
+    position: relative;
+    font-weight: 700;
+    margin-left: 20px;
+    font-size: 2.5rem;
+    color: var(--blue);
+}
+
+.numbers2 {
+    position: relative;
+    font-weight: 900;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 2.1rem !important;
+    color: var(--blue);
+}
+
+.numbers3 {
+    position: relative;
+    font-weight: 900;
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 1.6rem !important;
+    color: var(--blue);
+}
+
+.cardBox .card .cardName {
+    color: var(--black2);
+    font-size: 1.1rem;
+    margin-left: 20px;
+}
+
+.cardName2 {
+    color: var(--black2);
+    font-size: 1.1rem !important;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+.cardBox .card .iconBx {
+    font-size: 3.5rem;
+    width: 100px;
+    margin-right: 20px;
+    margin-top: 25px;
+    color: var(--purple);
+}
+
+.cardBox .card .iconBx2 {
+    font-size: 3.5rem;
+    width: 100px;
+    margin-right: 20px;
+    margin-top: 25px;
+    color: var(--orange);
+}
+
+.cardBox .card .iconBx3 {
+    font-size: 3.5rem;
+    width: 100px;
+    margin-right: 20px;
+    margin-top: 25px;
+    color: var(--green);
+}
+
+.cardBox .card .iconBx4 {
+    font-size: 3.5rem;
+    width: 100px;
+    margin-right: 20px;
+    margin-top: 25px;
+    color: var(--pink);
+}
+
+.cardBox .card:hover {
+    background: var(--blue);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .numbers2,
+.cardBox .card:hover .numbers3,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .cardName2,
+.cardBox .card:hover .iconBx,
+.cardBox .card:hover .iconBx2,
+.cardBox .card:hover .iconBx3,
+.cardBox .card:hover .iconBx4 {
+    color: var(--white);
+}
+
+/* ================== Order Details List ============== */
+.details {
+    position: relative;
+    min-height: 600px; 
+    height: 100%;
+    margin: 20px;
+    background: #fff; 
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px; 
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: var(--blue);
+    padding: 10px;    
+    margin-bottom: 20px;
+    border-radius: 10px; 
+}
+
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--white);
+    margin-top: 5px;
+    text-align: center;
+}
+
+.cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+}
+
+/* ====================== Footer ========================== */
+.footer {
+    position: relative; 
+    bottom: 0;
+    width: 100%;
+    height: 100px; 
+    background: #f8f9fa; 
+    text-align: center;
+    padding: 10px 0; 
+}
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+    .navigation {
+        left: -300px;
+    }
+
+    .navigation.active {
+        width: 300px;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 300px;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .recentOrders {
+        overflow-x: auto;
+    }
+
+    .status.inProgress {
+        white-space: nowrap;
+    }
+
+    .search {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px;
+    }
+
+    .card {
+        display: flex; 
+        align-items: center; 
+        padding: 10px; 
+        border: 1px solid #ccc; 
+        border-radius: 20px;
+    }
+
+    .iconBx {
+        font-size: 2rem;
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    .numbers {
+        font-size: 1.6rem;
+        margin-right: 10px; 
+    }
+
+    .cardHeader h2 {
+        font-size: 18px; 
+    }
+
+    .cardName {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cardBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .card {
+        display: flex; 
+        align-items: center; 
+        padding: 10px; 
+        border: 1px solid #ccc; 
+        border-radius: 20px; 
+    }
+
+    .iconBx {
+        font-size: 1.8rem; 
+        width: 50px; 
+        margin-right: 5px; 
+    }
+
+    .numbers {
+        font-size: 1.4rem; 
+        margin-right: 5px; 
+    }
+
+    .cardHeader h2 {
+        font-size: 16px; 
+    }
+
+    .cardName {
+        font-size: 1.4rem; 
+    }
+
+    .user {
+        min-width: 40px; 
+    }
+
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.active .toggle {
+        color: #fff;
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+}
+
+
