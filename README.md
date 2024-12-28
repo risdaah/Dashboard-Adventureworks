@@ -10,7 +10,12 @@
 ---
 ### **`Tampilan`**
 
-Isi disini 
+![IMG-20241228-WA0003](https://github.com/user-attachments/assets/086fcddf-014f-4474-9248-737456e178c5)
+
+![IMG-20241228-WA0005](https://github.com/user-attachments/assets/fb821c9d-1890-47e2-bdd6-7e0db719e12b)
+
+![IMG-20241228-WA0002](https://github.com/user-attachments/assets/1f153210-5da8-4a51-978d-4716f7a2d90b)
+
 ---
 ### **`Langkah-Langkah Menjalankan Aplikasi Website`**
 
@@ -29,4 +34,5 @@ Isi disini
 13. Buka database dan impor file sql yang ada di folder htdocs **trdash/database** dan impor schsales.sql, schpurchasing.sql, schaccount.sql sesuai dengan database yang sudah dibuat sebelumnya
 14. Akses folder apache lewat Command Prompt (CMD) dan jalankan catalina run **[contoh akses di CMD: D:\apache-tomcat-9.0.97]**
 15. Akses website dengan link [localhost/trdash](http://localhost/trdash/)
+16. Untuk login bisa cek akun yang terdaftar dalam database **schaccount**
 ---
