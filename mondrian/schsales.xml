@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<Schema name="salesdw">
+
+<!-- Sales -->
+<Cube name="SchSales" defaultMeasure="Amount">
+
+  
+  <Table name="sales_fact"/>
+
+
+<!-- Dimensi Produk -->
+    <Dimension name="Product" foreignKey="ProductID">
+      <Hierarchy hasAll="true" allMemberName="All Products" primaryKey="ProductID" ignoreInvalidMembers="true">
+        <Table name="product"/>
+        <Level name="Category" column="ProductCategory" uniqueMembers="true"/>
+        <Level name="SubCategory" column="ProductSubCategory" uniqueMembers="false"/>
+        <Level name="Product" column="ProductName" uniqueMembers="true"/>
+        <Level name="Color" column="ProductColor" uniqueMembers="false"/>
+      </Hierarchy>
+    </Dimension>
+
+<!-- Dimensi Time -->
+  <Dimension name="Time" foreignKey="TimeID">
+    <Hierarchy hasAll="true" allMemberName="All Times" primaryKey="TimeID">
+      <Table name="time" />
+      <Level name="Year" column="tahun" type="Numeric" uniqueMembers="true" levelType="TimeYears"/>
+      <Level name="Month" column="bulan" uniqueMembers="false" type="Numeric" levelType="TimeMonths"/>
+      <Level name="Date" column="tanggal" uniqueMembers="false" type="Numeric" levelType="TimeDays"/>
+    </Hierarchy>
+  </Dimension>
+
+<!-- Dimensi Customer -->
+    <Dimension name="Customer" foreignKey="CustomerID">
+      <Hierarchy hasAll="true" allMemberName="All Customers" primaryKey="CustomerID" ignoreInvalidMembers="true">
+        <Table name="customer"/>
+        <Level name="Customer Type" column="CustomerType" uniqueMembers="false"/>
+        <!-- <Level name="Customer" column="CustomerName" uniqueMembers="true"/> -->
+      </Hierarchy>
+    </Dimension>
+
+
+    <!-- Dimensi Karyawan -->
+    <Dimension name="Employee" foreignKey="EmployeeID">
+      <Hierarchy hasAll="true" allMemberName="All Employees" primaryKey="EmployeeID" ignoreInvalidMembers="true">
+        <Table name="employee"/>
+        <Level name="Employee" column="EmployeeName" uniqueMembers="true"/>
+      </Hierarchy>
+    </Dimension>
+
+    <!-- Dimensi Wilayah Penjualan -->
+    <Dimension name="Territory" foreignKey="TerritoryID">
+      <Hierarchy hasAll="true" allMemberName="All Territories" primaryKey="TerritoryID">
+        <Table name="salesterritory"/>
+        <Level name="Territory" column="TerritoryName" uniqueMembers="true"/>
+      </Hierarchy>
+    </Dimension>
+
+    <!-- Measures -->
+    <Measure name="Quantity" column="Quantity" aggregator="sum" formatString="#,###"/>
+    <Measure name="Sales Amount" column="SalesAmount" aggregator="sum" formatString="#,###"/>
+    <Measure name="Unit Price" column="UnitPrice" aggregator="sum" formatString="#,###"/>
+    <Measure name="Sales Count" column="SalesID" aggregator="count" formatString="#,###"/>
+    
+    <!-- Measures for counting unique IDs -->
+    <Measure name="All Products" column="ProductID" aggregator="distinct-count" formatString="#,###"/>
+    <Measure name="All Times" column="TimeID" aggregator="distinct-count" formatString="#,###"/>
+    <Measure name="All Employees" column="EmployeeID" aggregator="distinct-count" formatString="#,###"/>
+    <Measure name="All Customers" column="CustomerID" aggregator="distinct-count" formatString="#,###"/>
+    <Measure name="All Territories" column="TerritoryID" aggregator="distinct-count" formatString="#,###"/>
+</Cube>
+
+</Schema>
