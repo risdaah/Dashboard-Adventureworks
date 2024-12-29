@@ -29,7 +29,7 @@
 </Dimension>
 
 <!-- Dimensi Vendor -->
-<Dimension name="Vendor" foreignKey="VendroID">
+<Dimension name="Vendor" foreignKey="VendorID">
     <Hierarchy hasAll="true" allMemberName="All Vendors" primaryKey="VendorID" ignoreInvalidMembers="true">
         <Table name="vendor"/>
         <Level name="VendorName" column="VendorName" uniqueMembers="true"/>
