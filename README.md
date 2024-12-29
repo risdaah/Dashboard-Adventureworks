@@ -14,6 +14,8 @@
 
 ![screencapture-localhost-trdash-home-php-2024-12-28-21_11_08](https://github.com/user-attachments/assets/89484588-73be-4cb2-80c5-7bca5ec43421)
 
+![image](https://github.com/user-attachments/assets/c9f4f911-994f-469c-8eaf-abb52d0559ac)
+
 ![IMG-20241228-WA0005](https://github.com/user-attachments/assets/fb821c9d-1890-47e2-bdd6-7e0db719e12b)
 
 ![IMG-20241228-WA0002](https://github.com/user-attachments/assets/1f153210-5da8-4a51-978d-4716f7a2d90b)
