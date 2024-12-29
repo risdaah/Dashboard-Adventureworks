@@ -16,7 +16,7 @@
 
 ![scrnli_AN4wC3sauZ7dby](https://github.com/user-attachments/assets/ce9cdde5-3274-49b9-ab33-bdb87adde120)
 
-![IMG-20241228-WA0005](https://github.com/user-attachments/assets/fb821c9d-1890-47e2-bdd6-7e0db719e12b)
+![scrnli_aH3bQRhe6ZaYoj](https://github.com/user-attachments/assets/fa6d4077-ab07-4a62-862b-557d814aced6)
 
 ![IMG-20241228-WA0002](https://github.com/user-attachments/assets/1f153210-5da8-4a51-978d-4716f7a2d90b)
 
