@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Schema name="purchasingdw">
 
-<!-- Sales -->
+<!-- Purchasing -->
 <Cube name="SchPurchasing" defaultMeasure="Amount">
 
 <Table name="purchasing_fact"/>
