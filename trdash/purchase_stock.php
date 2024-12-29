@@ -124,7 +124,7 @@ if (isset($_GET['logout'])) {
                 <!-- ======================= Cards ================== -->
                 <div class="cardBox">
                 
-                    <!-- ================ Components ================= -->
+                    <!-- ================ Saddles ================= -->
                     <div class="card">
                         <div class="row g-0">                            
                             <div class="col-md-8">
@@ -133,11 +133,11 @@ if (isset($_GET['logout'])) {
                                         <?php                                             
                                             require_once "koneksi_purchasing.php";
 
-                                            $sql = "SELECT p.ProductCategory, SUM(pf.ReceivedQty) as total_qty
+                                            $sql = "SELECT p.ProductSubCategory, SUM(pf.ReceivedQty) as total_qty
                                                 FROM purchasing_fact pf
                                                 JOIN product p ON pf.ProductID = p.ProductID
-                                                WHERE p.ProductCategory = 'Components'
-                                                GROUP BY p.ProductCategory";
+                                                WHERE p.ProductSubCategory = 'Saddles'
+                                                GROUP BY p.ProductSubCategory";
 
 
                                             $query = mysqli_query($mysqli, $sql);
@@ -153,18 +153,18 @@ if (isset($_GET['logout'])) {
                                             }                                
                                         ?>  
                                     </div>
-                                    <div class="cardName">Components</div>
+                                    <div class="cardName">Saddles</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="iconBx">
-                                    <i class="fa-solid fa-gears"></i>
+                                    <i class="fa-solid fa-gauge"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- ================ Accessories ================= -->
+                    <!-- ================ Pedals ================= -->
                     <div class="card">
                         <div class="row g-0">                            
                             <div class="col-md-8">
@@ -172,11 +172,11 @@ if (isset($_GET['logout'])) {
                                     <div class="numbers2">
                                     <?php 
                                         
-                                        $sql = "SELECT p.ProductCategory, SUM(pf.ReceivedQty) as total_qty
+                                        $sql = "SELECT p.ProductSubCategory, SUM(pf.ReceivedQty) as total_qty
                                             FROM purchasing_fact pf
                                             JOIN product p ON pf.ProductID = p.ProductID
-                                            WHERE p.ProductCategory = 'Accessories'
-                                            GROUP BY p.ProductCategory";
+                                            WHERE p.ProductSubCategory = 'Pedals'
+                                            GROUP BY p.ProductSubCategory";
 
 
                                             $query = mysqli_query($mysqli, $sql);
@@ -192,18 +192,18 @@ if (isset($_GET['logout'])) {
                                             }                                
                                         ?> 
                                     </div>
-                                    <div class="cardName">Accessories</div>
+                                    <div class="cardName">Pedals</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="iconBx2">
-                                    <i class="fa-solid fa-link"></i>
+                                    <i class="fa-solid fa-sleigh"></i>  
                                 </div>
                             </div>
                         </div>
                     </div>                    
 
-                    <!-- ================ Clothing ================= -->
+                    <!-- ================ Tires And Tubes ================= -->
                     <div class="card">
                         <div class="row g-0">                            
                             <div class="col-md-8">
@@ -211,11 +211,11 @@ if (isset($_GET['logout'])) {
                                     <div class="numbers2">
                                         <?php 
                                            
-                                            $sql = "SELECT p.ProductCategory, SUM(pf.ReceivedQty) as total_qty
+                                            $sql = "SELECT p.ProductSubCategory, SUM(pf.ReceivedQty) as total_qty
                                                 FROM purchasing_fact pf
                                                 JOIN product p ON pf.ProductID = p.ProductID
-                                                WHERE p.ProductCategory = 'Clothing'
-                                                GROUP BY p.ProductCategory";
+                                                WHERE p.ProductSubCategory = 'Tires And Tubes'
+                                                GROUP BY p.ProductSubCategory";
 
                                             $query = mysqli_query($mysqli, $sql);
 
@@ -233,18 +233,18 @@ if (isset($_GET['logout'])) {
                                             }
                                         ?>
                                     </div>
-                                    <div class="cardName">Clothing</div>
+                                    <div class="cardName">Tires And Tubes</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="iconBx4">
-                                    <i class="fa-solid fa-shirt"></i>
+                                    <i class="fa-solid fa-tape"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ================ Bikes ================= -->
+                    <!-- ================ Brakes ================= -->
                     <div class="card">
                         <div class="row g-0">                            
                             <div class="col-md-8">
@@ -252,27 +252,11 @@ if (isset($_GET['logout'])) {
                                     <div class="numbers2">
                                         <?php                                             
 
-                                            $sql = "SELECT 
-                                            p.ProductCategory, 
-                                            COALESCE(SUM(pf.ReceivedQty), 0) as total_qty
-                                            FROM 
-                                            product p
-                                            LEFT JOIN 
-                                            purchasing_fact pf ON pf.ProductID = p.ProductID
-                                            WHERE 
-                                            p.ProductCategory = 'Bikes'
-                                            GROUP BY 
-                                            p.ProductCategory
-
-                                            UNION ALL
-
-                                            SELECT 
-                                            'Bikes' AS ProductCategory, 
-                                            0 as total_qty
-                                            WHERE 
-                                            NOT EXISTS (SELECT 1 FROM purchasing_fact pf WHERE pf.ProductID IN (SELECT ProductID FROM product WHERE ProductCategory = 'Bikes'))";
-
-
+                                            $sql = "SELECT p.ProductSubCategory, SUM(pf.ReceivedQty) as total_qty
+                                            FROM purchasing_fact pf
+                                            JOIN product p ON pf.ProductID = p.ProductID
+                                            WHERE p.ProductSubCategory = 'Brakes'
+                                            GROUP BY p.ProductSubCategory";
 
                                             $query = mysqli_query($mysqli, $sql);
 
@@ -287,12 +271,12 @@ if (isset($_GET['logout'])) {
                                             }                                
                                         ?> 
                                     </div>
-                                    <div class="cardName">Bikes</div>
+                                    <div class="cardName">Brakes</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="iconBx3">
-                                    <i class="fa-solid fa-bicycle"></i>
+                                    <i class="fa-solid fa-magnet"></i>
                                 </div>
                             </div>
                         </div>
