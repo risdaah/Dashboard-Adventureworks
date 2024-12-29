@@ -47,22 +47,3 @@ analyze very large datasets stored in SQL databases without writing SQL.">
 
 </body>
 </html> 
-
-<!-- <html>
-	<head>
-		<meta name="description" content="Mondrian is an OLAP server written in Java. It enables you to interactively
-		analyze very large datasets stored in SQL databases without writing SQL.">
-		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-		<title>OLAP WH SAKILA - Using Mondrian</title>
-		<link rel="stylesheet" href="stylesheet.css" type="text/css" />
-	</head>
-<body>
-	<p>OLAP WHSAKILA</p>
-	<ul>
-		<li><a href="testpage.jsp?query=whsakila">PIVOT WHSAKILA</a></li>
-
-	</ul>
-
-
-</body>
-</html> -->
